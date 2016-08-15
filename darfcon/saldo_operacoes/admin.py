@@ -1,3 +1,7 @@
 from django.contrib import admin
 
-# Register your models here.
+from .models import Operacao
+from .models import FechamentoMensal
+
+admin.site.register(Operacao)
+admin.site.register(FechamentoMensal)

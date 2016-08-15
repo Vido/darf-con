@@ -46,11 +46,23 @@ MIDDLEWARE = [
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'darfcon.middleware.EnforceLoginMiddleware',
 ]
 
 ROOT_URLCONF = 'darfcon.urls'
+
+LOGIN_URL = '/login/'
+LOGIN_REDIRECT_URL = '/sys/'
+
+PUBLIC_URLS = (
+    r'^$',
+    r'^login',
+    r'^logout',
+    r'^admin',
+)
 
 TEMPLATES = [
     {
